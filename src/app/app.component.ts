@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderBarComponent } from './header-bar/header-bar.component';
+import { FooterBarComponent } from './footer-bar/footer-bar.component';
+import { FormBaseComponent } from './form/form-base/form-base.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderBarComponent, FooterBarComponent, FormBaseComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'smi-pay';
+  
 }
