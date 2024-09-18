@@ -6,6 +6,7 @@ import { FormBaseComponent } from './form/form-base/form-base.component';
 import { FormHeaderComponent } from './form/form-header/form-header.component';
 import { FormContentComponent } from './form/form-content/form-content.component';
 import { FormFooterComponent } from './form/form-footer/form-footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { FormFooterComponent } from './form/form-footer/form-footer.component';
     FormBaseComponent,
     FormHeaderComponent,
     FormContentComponent,
-    FormFooterComponent
+    FormFooterComponent,
+    SidebarComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
