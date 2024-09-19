@@ -1,14 +1,10 @@
-.sidebar {
+:host {
     width: 100%;
     max-width: 240px;
     background: #FAFAFA;
     padding-top: 20px;
     overflow: auto;
     border-right: 1px solid #D8D8D8;
-    position: absolute;
-    top: 78px;
-    bottom: 109px;
-    left: 0;
 }
 
 .section {
