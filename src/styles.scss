@@ -17,3 +17,30 @@ body {
 a {
     color: inherit;
 }
+
+.success-tag {
+    background-color: #74BC6229;
+    border: 1px solid #088C6852;
+    color: #088C68;
+    fill: #088C68;
+}
+
+.identifier-tag {
+    background-color: #94C3E83D;
+    color: #000000;
+}
+
+
+.info-tag {
+    background-color: #94C3E87A;
+    border: 1px solid #94C3E8;
+    color: #094A82;
+    fill: #094A82;
+}
+
+.warning-tag {
+    background-color: #FDEFA5;
+    border: 1px solid #8F855D;
+    color: #000000;
+    fill: #8F855D;
+}

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
-import { IconRegistryService } from '../icon-registry.service';
-import { SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'icon',
@@ -13,11 +12,15 @@ import { SafeHtml } from '@angular/platform-browser';
 export class IconComponent {
   public name = input.required<string>();
   protected icon!: Promise<SafeHtml>;
-  private iconRegistry = inject(IconRegistryService);
+  private sanitizer = inject(DomSanitizer);
 
-  ngOnInit(): void {
-    if (this.name) {
-      this.icon = this.iconRegistry.getIcon(this.name());
-    }
+  async ngOnInit(): Promise<void> {
+    this.icon = this.getIcon(this.name());
+  }
+
+  public async getIcon(iconName: string): Promise<SafeHtml> {
+    const response = await fetch(iconName.toString());
+    const svgText = await response.text();
+    return this.sanitizer.bypassSecurityTrustHtml(svgText);
   }
 }

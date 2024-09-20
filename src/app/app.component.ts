@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { FooterBarComponent } from './footer-bar/footer-bar.component';
@@ -7,7 +7,6 @@ import { FormHeaderComponent } from './form/form-header/form-header.component';
 import { FormContentComponent } from './form/form-content/form-content.component';
 import { FormFooterComponent } from './form/form-footer/form-footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { IconRegistryService } from './icon-registry.service';
 
 @Component({
   selector: 'app-root',
@@ -26,10 +25,4 @@ import { IconRegistryService } from './icon-registry.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  private iconRegistry = inject(IconRegistryService);
-
-  ngOnInit(): void {
-    this.iconRegistry.registerIcon('home', 'home.svg');
-  }
-  
 }
